@@ -1,0 +1,28 @@
+:root{
+  --fc-primary: #fff;
+  --fc-link: #ffab40;
+  --fc-link-hover: #ffdd71;
+
+  --ff-primary: "Helvetica", sans-serif;
+  --ff-header: "Helvetica", sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6{
+  font-family: var(--ff-header);
+}
+
+p{
+  font-family: var(--ff-primary);
+}
+
+a, h2 a{
+  color: var(--fc-link);
+  text-decoration: none;
+}
+a:hover{
+  color: var(--fc-link-hover);
+}
+
+.link{
+  font-size: 1.5rem;
+}

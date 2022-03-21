@@ -1,0 +1,20 @@
+extends layout.pug
+
+block header
+  if session.username
+    h1 Welcome, #{session.name}
+  else
+    h1 Welcome!
+
+block content
+  if session.username
+    a(href="/profile")
+      h2 Profile
+    a(href="/logout")
+      h2 Logout
+  else
+    p Howdy stranger!
+    a.link(href="/login")
+      p Login
+    a.link(href="/signup")
+      p Sign up

@@ -1,0 +1,16 @@
+{
+  "name": "User Registration Demo",
+  "version": "1.0.0",
+  "description": "A demo for user registration, for educational purposes",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Sondre Grønås (https://github.com/sondregronas)",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.3",
+    "express-session": "^1.17.2",
+    "pug": "^3.0.2"
+  }
+}

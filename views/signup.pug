@@ -1,0 +1,16 @@
+extends layout.pug
+
+block header
+  h1 Sign up
+block content
+  form(action="/signup" method="post")
+    label Username
+    input(name="username" placeholder="Username" required)
+    br
+    label Display name
+    input(name="name" placeholder="Display name" required)
+    br
+    label Password
+    input(type="password" placeholder="Password" name="password" required)
+    br
+    input(type="submit" value="Sign-up")

@@ -1,0 +1,71 @@
+:root{
+  --bg-primary: #121212;
+  --bg-secondary: #222;
+  --bg-tertiary: #2e2e2e;
+
+  --box-size: 1040px;
+}
+
+html, body{
+  margin: 0;
+  padding: 0;
+}
+
+body{
+  background-color: var(--bg-primary);
+  color: var(--fc-primary);
+}
+
+header{
+  display: grid;
+  grid-template-columns: 1fr 2.5fr 1fr;
+  max-width: var(--box-size);
+  margin: 0 auto;
+  margin-top: 10vh;
+  padding: 20px 30px;
+  background-color: var(--bg-secondary)
+}
+
+#h_center{
+  text-align: center;
+}
+
+.logo{
+  font-size: 3.5rem;
+}
+.logo:hover span{
+  display: none;
+}
+.logo:hover:after{
+  content: '😊';
+}
+
+#content{
+  max-width: var(--box-size);
+  margin: 0 auto;
+  text-align: center;
+  padding: 50px 30px;
+  background-color: var(--bg-tertiary)
+}
+
+footer{
+  max-width: 80vw;
+  margin: 0 auto;
+  text-align: center;
+}
+
+form label, form input{
+  padding: 5px;
+  margin-bottom: 5px;
+}
+
+form label{
+  width: 13ch;
+  text-align: left;
+  display: inline-block;
+}
+
+form input[type="submit"]{
+  margin-top: 10px;
+  margin-bottom: 0;
+}
