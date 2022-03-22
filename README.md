@@ -18,6 +18,7 @@ The goal of this project is to function as a reference for teaching, and learnin
 And of course:
 - NodeJS
 - Pug templating
+
 ---
 ## Todo
 - Edge case: Add a redirect callback wherever `/login` is referenced
@@ -28,6 +29,7 @@ And of course:
 Ideally this project should be segmented and further explained in a wiki, step by step. Detailing the wrong ways & the less wrong ways.
 <br>
 Might get to that eventually, for now a classroom environment will do.
+
 ---
 ## Setup
 - Clone repository
