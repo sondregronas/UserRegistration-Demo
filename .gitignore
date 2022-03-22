@@ -1,3 +1,6 @@
+# Project specific
+userdata.json
+
 # Logs
 logs
 *.log
