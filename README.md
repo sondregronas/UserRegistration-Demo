@@ -1,4 +1,4 @@
-# User Registration Demo
+# User Registration Demo (WIP)
 Note: This project is for educational purposes and should not be used in a production environment.<br>
 An Express demo-app featuring encrypted user signup forms, user login forms & session variables (cookies). All stored in a .json format.
 <br>
@@ -15,9 +15,6 @@ The goal of this project is to function as a reference for teaching, and learnin
 - Spotting edge cases
 - Input sanitization
 - Session files / Cookies
-And of course:
-- NodeJS
-- Pug templating
 
 ---
 ## Todo
@@ -26,6 +23,7 @@ And of course:
 - Define "login" protected zones in a more intuitive manner.
 - Sanitize inputs (no special characters in name etc.)
 - Add a NoSQL/SQL version.
+
 Ideally this project should be segmented and further explained in a wiki, step by step. Detailing the wrong ways & the less wrong ways.
 <br>
 Might get to that eventually, for now a classroom environment will do.
