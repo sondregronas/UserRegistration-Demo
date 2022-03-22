@@ -11,6 +11,8 @@ const app = express();
 
 // Link public folder to express
 app.use("/public", express.static('public'));
+// Set basedir for views
+app.locals.basedir = path.join(__dirname, 'views');
 
 // User variables
 // userData = .JSON database file
@@ -96,6 +98,7 @@ app.post('/signup', (req, res) => {
   }
 
   // Assign the POST variables
+	var data = {req: req.body}
   // username is converted to lowercase.
   let username = req.body.username.toLowerCase()
   let name     = req.body.name
@@ -117,19 +120,20 @@ app.post('/signup', (req, res) => {
 
       // Success! Redirect to /auth, with the same POST data
       // AKA. log the user in.
-      res.redirect(307, '/auth')
+      res.redirect(307, '/login')
     } else {
       // If user already exists...
-      res.send("A user by that name already exists.")
+			data.error = "A user by that name already exists."
+      res.render('signup', data)
     }
   } else {
-    // If some of the required fields are null..
-    res.send("Please fill out the entire form.")
+		data.error = "Please fill out the entire form."
+		res.render('signup', data)
   }
 })
 
 // Handle login /auth POST requests
-app.post('/auth', (req, res) => {
+app.post('/login', (req, res) => {
   // Load the database, and check if it exists...
   var db = {}
   try {
@@ -139,6 +143,7 @@ app.post('/auth', (req, res) => {
   }
 
   // Assign the POST variables
+	var data = {req: req.body}
   // username is converted to lowercase.
 	let username = req.body.username.toLowerCase()
   // Add pepper and hash with sha512, to match the database value.
@@ -158,13 +163,23 @@ app.post('/auth', (req, res) => {
     }
     else {
       // Wrong credentials...
-      res.send("Wrong username or password")
+			data.error = "Wrong username or password!"
+			res.render('login', data)
     }
 	} else {
     // If some required fields are null...
-    res.send("Please enter a username and password.")
+		data.error = "Please enter a username and password."
+		res.render('login', data)
   }
 });
+
+// Handle wildcard requests
+// Points to *.pug in views, supports nested files too
+// /coolpage links to /coolpage.pug
+app.get('/*', (req, res) => {
+	// Pass in session as 'session'
+	res.render(req.url.substring(1), {session: req.session});
+})
 
 // Start the app
 app.listen(port);

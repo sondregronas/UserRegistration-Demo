@@ -1,16 +1,25 @@
-extends layout.pug
+extends /layouts/layout.pug
 
 block header
   h1 Sign up
 block content
+  if req
+    - var username = req.username
+    - var name = req.name
+  else
+    - var username = ''
+    - var name = ''
+
   form(action="/signup" method="post")
     label Username
-    input(name="username" placeholder="Username" required)
+    input(name="username" placeholder="Username" value=username required)
     br
     label Display name
-    input(name="name" placeholder="Display name" required)
+    input(name="name" placeholder="Display name" value=name required)
     br
     label Password
     input(type="password" placeholder="Password" name="password" required)
     br
     input(type="submit" value="Sign-up")
+    if error
+      p.error #{error}

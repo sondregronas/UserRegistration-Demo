@@ -1,15 +1,22 @@
-extends layout.pug
+extends /layouts/layout.pug
 
 block header
   h1 Login
 block content
-  form(action="/auth" method="post")
+  if req
+    - var username = req.username
+  else
+    - var username = ''
+
+  form(action="/login" method="post")
     label Username
-    input(name="username" placeholder="Username" required)
+    input(name="username" placeholder="Username" value=username required)
     br
     label Password
     input(type="password" placeholder="Password" name="password" required)
     br
     input(type="submit" value="Login")
     br
+    if error
+      p.error #{error}
     p Don't have an account? <a href="signup">Sign up by clicking here.</a>

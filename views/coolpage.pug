@@ -1,0 +1,13 @@
+extends /layouts/layout.pug
+
+block header
+  if session.loggedin
+    h1 Cool page!
+  else
+    h1 Permission Denied
+
+block content
+  if session.loggedin
+    h2 For cool people 😎
+  else
+    h2 You need to be logged in to view this page. <a href="/login">Login.</a>

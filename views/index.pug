@@ -1,13 +1,13 @@
-extends layout.pug
+extends /layouts/layout.pug
 
 block header
-  if session.username
+  if session.loggedin
     h1 Welcome, #{session.name}
   else
     h1 Welcome!
 
 block content
-  if session.username
+  if session.loggedin
     a(href="/profile")
       h2 Profile
     a(href="/logout")
@@ -18,3 +18,8 @@ block content
       p Login
     a.link(href="/signup")
       p Sign up
+
+  br
+  h3 A Link for cool people!
+  a.link(href="/coolpage")
+    p Link
