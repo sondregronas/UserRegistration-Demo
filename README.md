@@ -1,7 +1,9 @@
 # User Registration Demo
 Note: This project is for educational purposes and should not be used in a production environment.<br>
 An Express demo-app featuring encrypted user signup forms, user login forms & session variables (cookies). All stored in a .json format.
+<br>
 ![Login preview](/assets/login.jpg)
+
 ---
 ## Goal
 The goal of this project is to function as a reference for teaching, and learning, the fundamentals of:
