@@ -6,16 +6,21 @@ block content
   if req
     - var username = req.username
     - var name = req.name
+    - var email = req.email
   else
     - var username = ''
     - var name = ''
+    - var email = ''
 
   form(action="/signup" method="post")
     label Username
-    input(name="username" placeholder="Username" value=username required)
+    input(type="text" name="username" placeholder="Username" value=username required)
     br
     label Display name
-    input(name="name" placeholder="Display name" value=name required)
+    input(type="text" name="name" placeholder="Display name" value=name required)
+    br
+    label Email
+    input(type="email" name="email" placeholder="Email" value=email required)
     br
     label Password
     input(type="password" placeholder="Password" name="password" required)
